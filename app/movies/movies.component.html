@@ -1,0 +1,23 @@
+    <form class="form-horizontal">
+          <div class="form-group has-feedback filter">
+            <label class="control-label col-sm-3" for="query">Search</label>
+            <div class="col-sm-3">
+              <input type="text" class="form-control"  #searchBox id="search-box" (keyup)="search(searchBox.value)">
+              <span class="glyphicon glyphicon-filter form-control-feedback" ></span>
+            </div>
+          </div>
+    </form>
+
+    <main *ngIf='users'>
+      <div class="row" *ngFor='let movie of movies'>
+        <div class="col-sm-3" style="margin-bottom: 10px;" [routerLink]="['/movie', movie.id]">
+             <img src= "http://image.tmdb.org/t/p/w150{{ movie.poster_path }}"/>  
+        </div>
+        <div class="col-sm-8">
+          <div class="jumbotron movie-list">
+            <h4  myShadowLight [highlightColor]="color">{{movie.title}}</h4>
+            <h6>release date: {{movie.release_date}}</h6>
+          </div>
+        </div>
+      </div>
+    </main>

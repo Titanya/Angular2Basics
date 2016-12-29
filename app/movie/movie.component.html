@@ -1,0 +1,31 @@
+    <main>
+      <div class="row">
+        <div class="col-sm-3" style="margin-bottom: 10px;">
+          <img src= "http://image.tmdb.org/t/p/w150{{ movie.poster_path }}"/>
+        </div>
+
+        <div class="col-sm-8">
+          <div class="jumbotron">
+          <div>
+            <span style="    font-size: 20px; font-style: italic;">{{movie.original_title}}</span>   
+            <span style="float: right;" class="glyphicon glyphicon-star"> {{movie.vote_average}} </span> 
+            <span style="float: right;" class="glyphicon glyphicon-star"></span>
+            <span style="float: right;" class="glyphicon glyphicon-star"></span>
+            <span style="float: right;" class="glyphicon glyphicon-star"></span>
+          </div>  
+            <h6>summary</h6>
+            <div>
+              {{movie.overview}}
+            </div>
+             <!-- <button (click)="goBack()">Back</button>-->
+          </div>
+        </div>
+      </div>
+
+        <div class="jumbotron"  *ngIf="user">
+            <h1>
+              {{user.name}} <small> {{user.username}} </small>
+            </h1> 
+            <input class="form-control" [(ngModel)]= "user.name">     
+        </div>
+    </main>
